@@ -1,0 +1,23 @@
+<div class="flex justify-center items-center flex-col">
+<h1 class="font-bold text-4xl mb-4">List Employee</h1>
+
+<table class="w-1/2 text-center items-center table-auto border-separate border-spacing-2 border">
+  <thead>
+    <th class="border bg-slate-300 uppercase">Id</th>
+    <th class="border bg-slate-300 uppercase">Name</th>
+    <th class="border bg-slate-300 uppercase">Gender</th>
+    <th class="border bg-slate-300 uppercase">Job</th>
+    <th class="border bg-slate-300 uppercase">Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of employee">
+      <td class="border capitalize">{{item.id}}</td>
+      <td class="border capitalize">{{item.name}}</td>
+      <td class="border capitalize">{{item.gender}}</td>
+      <td class="border capitalize">{{item.job}}</td>
+      <td class=""><button class="bg-gray-100 rounded-2xl px-2 py-1 hover:bg-gray-400" routerLink="/details/{{item.id}}">Details</button></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

@@ -1,0 +1,41 @@
+<div class="flex justify-center flex-col">
+<h1 class="text-center font-bold text-2xl mb-5">Edit Employee</h1>
+
+<div class="flex justify-center items-center">
+  <form class="bg-gray-100 p-3 flex flex-col gap-5" [formGroup]="formEdit" (ngSubmit)="editEmployee($event)">
+    <div class="flex justify-between">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" [value]="employee?.name" formControlName="name" />
+    </div>
+    <div class="flex justify-between">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" [value]="employee?.email" formControlName="email" />
+    </div>
+    <div class="flex justify-between">
+      <label for="phone">Phone</label>
+      <input type="phone" name="phone" id="phone" [value]="employee?.phone" formControlName="phone" />
+    </div>
+    <div class="flex justify-between">
+      <label for="email">Job</label>
+      <select name="job" id="job" formControlName="job">
+        <option hidden [selected]="employee?.job">{{employee?.job}}</option>
+        <option value="Frontend Developer">Frontend Developer</option>
+        <option value="Backend Developer">Backend Developer</option>
+        <option value="DevOps">DevOps</option>
+        <option value="Quality Assurance">Quality Assurance</option>
+      </select>
+    </div>
+    <div class="flex justify-between">
+        <label>Gender</label>
+        <select name="gender" id="gender" formControlName="gender">
+          <option hidden [selected]="employee?.gender">{{employee?.gender}}</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+    <div class="flex justify-center">
+      <button class="bg-blue-500 text-white px-3 py-1 rounded-2xl hover:bg-blue-300">Edit</button>
+    </div>
+  </form>
+</div>
+</div>
